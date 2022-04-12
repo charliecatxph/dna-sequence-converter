@@ -143,8 +143,12 @@
   font-size: 0.7rem;
 }
 
+.result span:nth-child(2) {
+  height: 10px;
+}
+
 .results {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .results .container .wrapper {
@@ -158,5 +162,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.mit {
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+
+.mit .container .wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.mit .container .wrapper svg {
+  width: 60px;
 }
 /*# sourceMappingURL=styles.css.map */
