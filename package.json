@@ -8,8 +8,11 @@
   },
   "keywords": [],
   "author": "<charliecatxph/>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "engines": {
+    "node" : "14.x"
   }
 }
