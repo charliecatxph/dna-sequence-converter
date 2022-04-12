@@ -119,6 +119,10 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.7rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .input .container .wrapper #input_dna {
