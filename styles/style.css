@@ -144,7 +144,8 @@
 }
 
 .result span:nth-child(2) {
-  height: 10px;
+  min-height: 10px;
+  text-align: center;
 }
 
 .results {
