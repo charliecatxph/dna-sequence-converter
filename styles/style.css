@@ -53,11 +53,14 @@
 }
 
 .logo .container .wrapper span {
-  user-select: none;
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
   font-size: 17px;
   color: black;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .title {
@@ -142,6 +145,10 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.7rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .result span:nth-child(2) {
