@@ -192,7 +192,8 @@ body {
 }
 
 .mit .container .wrapper svg {
-  width: 60px;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 .license {
