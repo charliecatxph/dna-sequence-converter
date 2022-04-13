@@ -6,6 +6,10 @@
           box-sizing: content-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   margin: auto;
   max-width: 500px;
@@ -190,4 +194,64 @@
 .mit .container .wrapper svg {
   width: 60px;
 }
+
+.license {
+  background-color: rgba(0,0,0,0.9);
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100%;
+  width:100vw;
+  display: none;
+  opacity: 0;
+}
+
+.license .container .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index:9999;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  max-width: 500px;
+  min-width: 250px;
+  max-height: 500px;
+  height: auto;
+  font-size: 0.7rem;
+  border: 1px solid black;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.license .container .wrapper svg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 60px;
+}
+
+@media only screen and (max-height: 380px) {
+  .license .container .wrapper {
+    max-width: 700px;
+    min-width: 500px;
+    max-height: 400px;
+  }
+}
+
+
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=styles.css.map */

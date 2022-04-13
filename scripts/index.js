@@ -121,3 +121,12 @@ document.getElementById("input_dna").addEventListener("input", (e) => {
     document.getElementById("output_three").innerHTML = translated_str.slice(0, -1);
     }
 })
+
+
+document.getElementById("x-button").addEventListener("click", (e) => {
+    document.getElementsByClassName("license")[0].classList.remove("show");
+})
+
+document.getElementById("mit-logo").addEventListener("click", (e) => {
+    document.getElementsByClassName("license")[0].classList.add("show");
+})
