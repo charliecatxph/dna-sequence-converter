@@ -47,6 +47,7 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   min-height: 14px;
   vertical-align: middle;
   text-align: center;
+  transition: 0.2s height ease-in-out;
 }
 
 .logo {
@@ -168,6 +169,7 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 .result span:nth-child(2) {
   min-height: 10px;
   text-align: center;
+  word-break: break-all;
 }
 
 .results {
