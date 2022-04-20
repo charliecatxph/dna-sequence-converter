@@ -261,10 +261,18 @@ body {
 
 .results .container .wrapper .change_mode .mode {
   font-size: 30px;
+  cursor: pointer;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
 }
 
 .results .container .wrapper .change_mode .mode:nth-of-type(2) {
   display: none;
+}
+
+.results .container .wrapper .change_mode .mode:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .mit {
@@ -380,6 +388,51 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   text-decoration: none;
+}
+
+.not-found {
+  height: 100vh;
+  width: 100vw;
+}
+
+.not-found .container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.not-found .container .wrapper span:nth-of-type(1) {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.not-found .container .wrapper .balik_ka {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.not-found .container .wrapper a {
+  text-decoration: none;
+  color: white;
+}
+
+.not-found .container .wrapper a div span:nth-of-type(1) {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 426px) {
