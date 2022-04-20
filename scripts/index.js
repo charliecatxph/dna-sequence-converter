@@ -1,3 +1,9 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log("Loaded")
+    document.getElementsByClassName("preloader")[0].style.transform = "translateY(-150vh)"
+});
+
+
 document.getElementById("input_dna").addEventListener("input", (e) => {
     let temp = e.target.value;
     if (temp.match(/[^acgt-]/gi)) {
@@ -155,4 +161,31 @@ document.getElementById("x-button").addEventListener("click", (e) => {
 
 document.getElementById("mit-logo").addEventListener("click", (e) => {
     document.getElementsByClassName("license")[0].classList.add("show");
+})
+
+
+document.getElementsByClassName("mode")[0].addEventListener("click", (e) => {
+    document.getElementsByClassName("announcement-bar")[0].style.background = "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+    document.getElementsByTagName("body")[0].style.color = "black";
+    document.getElementById("announcement").style.color = "white";
+    document.getElementsByClassName("logo")[0].style.backgroundColor = "white";
+    document.getElementsByClassName("logox")[0].style.color = "black";
+    document.getElementsByClassName("mitlogocolor")[0].setAttribute("fill", "#000");
+    document.getElementsByClassName("mode")[0].style.display = "none";
+    document.getElementsByClassName("mode")[1].style.display = "block";
+    document.getElementsByClassName("scode_a")[0].style.color = "black";
+})
+
+document.getElementsByClassName("mode")[1].addEventListener("click", (e) => {
+    document.getElementsByClassName("announcement-bar")[0].style.background = "linear-gradient(to bottom, #111111, transparent)";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#2d3436";
+    document.getElementsByTagName("body")[0].style.color = "white";
+    document.getElementById("announcement").style.color = "white";
+    document.getElementsByClassName("logo")[0].style.backgroundColor = "#2d3436";
+    document.getElementsByClassName("logox")[0].style.color = "white";
+    document.getElementsByClassName("mitlogocolor")[0].setAttribute("fill", "#FFF");
+    document.getElementsByClassName("mode")[0].style.display = "block";
+    document.getElementsByClassName("mode")[1].style.display = "none";
+    document.getElementsByClassName("scode_a")[0].style.color = "white";
 })
