@@ -1,6 +1,9 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    console.log("Loaded")
-    document.getElementsByClassName("preloader")[0].style.transform = "translateY(-150vh)"
+    document.getElementsByClassName("preloader")[0].style.transform = "translateY(-100vh)"
+    setTimeout(() => {
+        
+    document.getElementsByClassName("preloader")[0].style.display = "none"
+    }, 4000)
 });
 
 
