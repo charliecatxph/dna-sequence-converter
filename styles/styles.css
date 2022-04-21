@@ -37,10 +37,10 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  -webkit-transition: 2s -webkit-transform ease-in-out 0.5s;
-  transition: 2s -webkit-transform ease-in-out 0.5s;
-  transition: 2s transform ease-in-out 0.5s;
-  transition: 2s transform ease-in-out 0.5s, 2s -webkit-transform ease-in-out 0.5s;
+  -webkit-transition: 2s -webkit-transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: 2s -webkit-transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: 2s transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: 2s transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s, 2s -webkit-transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
 
 .announcement-bar {
