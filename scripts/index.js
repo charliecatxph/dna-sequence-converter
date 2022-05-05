@@ -9,28 +9,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 document.getElementById("input_dna").addEventListener("input", (e) => {
     let temp = e.target.value;
-    if (temp.match(/[^acgt-]/gi)) {
-        document.getElementById("output_one").innerHTML = "Invalid Input!";
-        document.getElementById("output_two").innerHTML = "Invalid Input!";
-        document.getElementById("output_three").innerHTML = "Invalid Input!";
-        document.getElementById("output_four").innerHTML = "Invalid Input!";
+    if (temp.match(/[^\sacgt-]/gi)) {
+        document.getElementById("output_one").innerHTML = `⛔ Invalid Character : "${temp.match(/[^\sacgt-]/gi)}"`;
+        document.getElementById("output_two").innerHTML = `⛔ Invalid Character : "${temp.match(/[^\sacgt-]/gi)}"`;
+        document.getElementById("output_three").innerHTML = `⛔ Invalid Character : "${temp.match(/[^\sacgt-]/gi)}"`;
+        document.getElementById("output_four").innerHTML = `⛔ Invalid Character : "${temp.match(/[^\sacgt-]/gi)}"`;
     } else {
-
-    let dna_string = temp;
-    let uppercaser = dna_string.toUpperCase();
-    let splitted_dna = uppercaser.split("-");
-
+    let dna_string = temp; 
+    let raw_dna_string = dna_string.replace(/[\s]/g, "");
+    let raw_dna_string_spec = dna_string.replace(/[\s-]/g, "");
+    let uppercaser = raw_dna_string.toUpperCase();
+    let uppercaser_spec = raw_dna_string_spec.toUpperCase();
     let replicated_arr = [];
     let replication_str = "";
 
     let transcripted_arr = [];
     let transcription_str = "";
+    let transcription_str_spec = "";
 
-    let translation_arr = [];
+    let translation_arr;
     let translated_str = "";
     let translated_str_two = "";
 
-    function replication(x) {
+    function replication(x) {  
         if (x === "A") {
             replicated_arr.push("T");
         } else if (x === "C") {
@@ -44,7 +45,8 @@ document.getElementById("input_dna").addEventListener("input", (e) => {
         }
     }
 
-    function transcription(x) {
+    function transcription(x, md) {
+        if (md === 0) {
         if (x === "A") {
             transcripted_arr.push("U");
         } else if (x === "C") {
@@ -56,22 +58,29 @@ document.getElementById("input_dna").addEventListener("input", (e) => {
         } else if (x === "-") {
             transcripted_arr.push("-");
         }
-    }
-
-    for (let x = 0; x < splitted_dna.length; x++) {
-        for (let y = 0; y < splitted_dna[x].length; y++) {
-            replication(splitted_dna[x][y]);
-            transcription(splitted_dna[x][y]);
+    } else if (md === 1) {
+        if (x === "A") {
+            transcription_str_spec += "U";
+        } else if (x === "C") {
+            transcription_str_spec += "G";
+        } else if (x === "T") {
+            transcription_str_spec += "A";
+        } else if (x === "G") {
+            transcription_str_spec += "C";
+        } else if (x === "-") {
+            transcription_str_spec += "-";
         }
-        replication("-");
-        transcription("-");
     }
-    replication_str = replicated_arr.join("").slice(0, -1);
+    }
 
-    transcription_str = transcripted_arr.join("").slice(0, -1);
+    for (let x = 0; x < uppercaser.length; x++) {
+        replication(uppercaser[x]);
+        transcription(uppercaser[x], 0);
+        transcription(uppercaser_spec[x], 1);
+    }
 
-    translation_arr = transcription_str.split("-");
-
+    translation_arr = transcription_str_spec.match(/\w{3}/g);
+    try {
     translation_arr.map(x => {
         if (x === "UUU" || x === "UUC") {
             translated_str += "Phe-";
@@ -147,8 +156,13 @@ document.getElementById("input_dna").addEventListener("input", (e) => {
             translated_str_two += "Glycine-";
         }
     })
+    } catch(e) {
 
-
+    }
+    
+    replication_str = replicated_arr.join("");
+    transcription_str = transcripted_arr.join("");
+    
 
     document.getElementById("output_one").innerHTML = replication_str;
     document.getElementById("output_two").innerHTML = transcription_str;
